@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <title>Dashboard</title>
+    <style>
+    .nonaktif{
+        display: none;
+    }
+    .aktif{
+        display: block;
+    }
+    </style>
+</head>
+<body>
+    <div class="tabbar tabbar--top tabbar--top-border">
+        <label class="tabbar__item tabbar--top-border__item">
+        <input type="radio" name="top-tabbar-b" checked="checked" id="tambah">
+            <button class="tabbar__button tabbar--top-border__button">
+            Data Mahasiswa
+            </button>
+        </label>
+        <label class="tabbar__item tabbar--top-border__item">
+        <input type="radio" name="top-tabbar-b" id="tambahan">
+            <button class="tabbar__button tabbar--top-border__button">
+            Input Data
+            </button>
+        </label>
+    </div>
+    <br><br><br><br><br><br>
+    <ul class="list list--noborder konten1 aktif">
+        <li class="list-item">
+            <div class="list-item__center">Indah Rahayu</div>
+        </li>
+        <li class="list-item">
+            <div class="list-item__center">17.01.4032</div>
+        </li>
+    </ul>
+    <center>
+        <span class="konten2 nonaktif">
+            <form action="dashboard.html">
+                <div><input class="text-input text-input--material" placeholder="Masukan Nama" type="text" required></div>
+                <br>
+                <div><input class="text-input text-input--material" placeholder="Masukan NIM" type="text" required></div>
+                <br>
+                <label class="radio-button radio-button--material">
+                    <input type="radio" class="radio-button__input radio-button--material__input" name="r" checked="checked">
+                    <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                    Laki-Laki
+                </label>
+                <label class="radio-button radio-button--material">
+                    <input type="radio" class="radio-button__input radio-button--material__input" name="r">
+                    <div class="radio-button__checkmark radio-button--material__checkmark"></div>
+                    Perempuan
+                </label>
+                <br><br>
+                <div><input class="text-input text-input--material" placeholder="Masukan Alamat" type="text" required></div>
+                <br><br>
+                <button class="button--large--cta" style="width: 60%; margin: 0 auto;" type="submit">Submit</button>
+            </form>
+        </span>
+    </center>
+</body>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#tambah').click(function(){
+			$('.konten1').addClass('aktif');
+			$('.konten1').removeClass('nonaktif');
+            $('.konten2').addClass('nonaktif');
+			$('.konten2').removeClass('aktif');
+		});		
+        $('#tambahan').click(function(){
+			$('.konten1').addClass('nonaktif');
+			$('.konten1').removeClass('aktif');
+            $('.konten2').addClass('aktif');
+			$('.konten2').removeClass('nonaktif');
+		});		
+	});
+</script>
+</html>
